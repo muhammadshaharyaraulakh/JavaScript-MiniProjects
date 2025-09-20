@@ -1,2 +1,4 @@
-# JavaScript-MiniProjects
-A collection of beginner to intermediate-level JavaScript mini projects to improve coding skills and understanding of core concepts.
+
+# JavaScript Mini Projects
+This repository contains a collection of small JavaScript projects designed to help you practice and improve your JavaScript skills. These mini-projects cover a range of topics, including DOM manipulation, events, timers, forms, and more.
+Each project is self-contained and beginner-friendly — perfect for learning by building!
