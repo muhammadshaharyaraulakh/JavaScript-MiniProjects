@@ -1,0 +1,209 @@
+:root {
+    --bg: #f5f8fb;
+    --card: #ffffff;
+    --accent: #6c63ff;
+    --accent-600: #574fd6;
+    --muted: #6b7280;
+    --good: #16a34a;
+    --warn: #f59e0b;
+    --bad: #ef4444;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(180deg, var(--bg) 0%, #eef3ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.counter-card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(29, 31, 41, 0.08);
+    padding: 28px;
+    border: 1px solid rgba(99, 102, 241, 0.05);
+}
+
+.title {
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+    margin-bottom: 6px;
+    font-size: 1.25rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+/* textarea */
+.textarea-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea#message {
+    width: 100%;
+    resize: vertical;
+    min-height: 120px;
+    max-height: 320px;
+    padding: 14px 16px;
+    border: 1px solid rgba(14, 22, 40, 0.06);
+    box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.02);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #0f172a;
+    transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+.input-group:focus-within textarea#message {
+    border-color: rgba(108, 99, 255, 0.9);
+    box-shadow: 0 6px 24px rgba(108, 99, 255, 0.08);
+}
+
+
+.counter-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.meta-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.chip {
+    background: rgba(108, 99, 255, 0.08);
+    color: var(--accent-600);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.char-count {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 0.95rem;
+    min-width: 92px;
+    text-align: right;
+}
+
+.char-count.small {
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* progress */
+.progress {
+    height: 8px;
+    background: rgba(15, 23, 42, 0.06);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-600));
+    width: 0%;
+    transition: width .25s ease;
+}
+
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.actions .btn-reset,
+.actions .btn-copy {
+    width: 200px;
+    border-radius: 0px !important;
+}
+
+.btn-reset {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-copy {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(108, 99, 255, 0.12);
+}
+
+        @media (max-width:576px) {
+            .counter-card {
+                padding: 20px;
+            }
+
+            .actions {
+                justify-content: stretch;
+                flex-direction: column-reverse;
+            }
+
+            .btn-reset,
+            .btn-copy {
+                width: 100%;
+            }
+.counter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.char-count {
+    min-width: auto;
+    width: 100%;
+    text-align: left;
+}
+
+            
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
+
+    textarea#message {
+        font-size: 0.95rem;
+    }
+
+    .char-count,
+    .char-count.small {
+        font-size: 0.85rem;
+    }
+}
