@@ -1,0 +1,139 @@
+
+    :root {
+      --bg: #eef2ff;
+      --card: rgba(255, 255, 255, 0.9);
+      --accent: #6366f1;
+      --accent-dark: #4f46e5;
+      --muted: #6b7280;
+      --shadow: rgba(99, 102, 241, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #eef2ff, #f5f7ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .age-card {
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      padding: 36px 28px;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.7s ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .age-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 55px rgba(99, 102, 241, 0.25);
+    }
+
+    .age-card h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .age-card p {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+
+    .date-input {
+      padding: 14px 20px;
+      font-size: 1rem;
+      border-radius: 50px;
+      border: 2px solid #d1d5db;
+      outline: none;
+      width: 80%;
+      text-align: center;
+      background: #fff;
+      box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.05),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.9);
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    }
+
+    .date-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 5px var(--shadow), inset 2px 2px 6px rgba(0, 0, 0, 0.05);
+      transform: scale(1.02);
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: scale(0.96);
+    }
+
+    .result {
+      margin-top: 26px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #111827;
+      min-height: 28px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+    }
+
+    .result.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .result h2 {
+      font-size: 1.1rem;
+      color: var(--accent-dark);
+      margin: 6px 0 2px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
