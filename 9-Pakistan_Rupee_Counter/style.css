@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  padding: 10px;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.row:last-of-type {
+  border-bottom: none;
+}
+
+input[type="number"] {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+  border-color: #00acc1;
+  box-shadow: 0 0 0 3px rgba(0, 172, 193, 0.2);
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cash-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #388e3c;
+  min-width: 60px;
+  text-align: right;
+}
+
+button {
+  height: 60px;
+  width: 150px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #004d40;
+  transform: translateY(-1px);
+}
+
+.result-part {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#txtFinalCash {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #37474f;
+}
+
+#txtFinalCashInWords {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #607d8b;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px 20px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input[type="number"] {
+    font-size: 0.9rem;
+    padding: 9px 10px;
+  }
+
+  .cash-text {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+
+  #txtFinalCash {
+    font-size: 1rem;
+  }
+
+  #txtFinalCashInWords {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cash-text {
+    text-align: left;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .result-part {
+    align-items: center;
+    text-align: center;
+  }
+}
