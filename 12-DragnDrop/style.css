@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.5s ease, border-color 0.2s ease;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: rebeccapurple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+.left-panel, .right-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px dashed #ff4d4d;
+  height: 400px;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.draggable-box {
+  width: 90%;
+  height: 70px;
+  background-color: red;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.draggable-box:hover {
+  transform: scale(1.05);
+  background-color: #7447a3;
+  border-color: #7447a3;
+}
+
+.right-panel {
+  background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    flex-direction: column;
+  }
+  
+  .left-panel, .right-panel {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    padding: 20px;
+  }
+  
+  .draggable-box {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .left-panel, .right-panel {
+    padding: 10px;
+    min-height: 250px;
+  }
+  
+  .draggable-box {
+    height: 40px;
+    font-size: 14px;
+  }
+}
