@@ -1,0 +1,109 @@
+:root {
+    --primary-orange: #FF5722;
+    --secondary-red: #E64A19;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #fbe9e7;
+    --input-border: #FFAB91;
+    --shadow-color: rgba(255, 87, 34, 0.2);
+}
+
+body {
+    background: var(--bg-light);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.bmi-card {
+    background: var(--text-light);
+    padding: 2.5rem 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.bmi-card:hover {
+    transform: translateY(-5px);
+}
+
+.bmi-card h1 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--secondary-red);
+    font-size: 2.2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid var(--input-border);
+    border-radius: 25px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+.form-control:focus {
+    border-color: var(--primary-orange);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+}
+
+.btn-calc {
+    margin-top: 1.5rem;
+    background-color: var(--primary-orange);
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-calc:hover {
+    background-color: var(--secondary-red);
+    transform: translateY(-2px);
+}
+
+.result {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+#BMI {
+    color: var(--primary-orange);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+#Condition {
+    display: block;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
