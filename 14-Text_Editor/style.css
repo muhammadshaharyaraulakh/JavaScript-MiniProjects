@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4A90E2;
+  --secondary-color: #50B498;
+  --text-color: #333;
+  --bg-light: #f9fbfd;
+  --bg-dark: #e0e0e0;
+  --border-color: #d0d7de;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.editor-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  box-shadow: 0 8px 30px var(--shadow-medium);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-dark);
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.toolbar .tool-button {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  color: var(--text-color);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.toolbar .tool-button:hover {
+  background-color: var(--bg-light);
+  border-color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.toolbar .tool-button:active {
+  transform: translateY(0);
+}
+
+.toolbar .tool-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.toolbar .tool-button.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(74, 144, 226, 0.4);
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background-color: var(--border-color);
+  margin: 0 8px;
+}
+
+.editor {
+  min-height: 400px;
+  padding: 20px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  outline: none;
+  overflow-y: auto;
+  tab-size: 2;
+  caret-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.editor:empty:not(:focus)::before {
+  content: attr(placeholder);
+  color: #a0a0a0;
+  pointer-events: none;
+}
+
+.toolbar .tool-select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  min-width: 120px;
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+}
+
+.toolbar .tool-select:hover {
+  border-color: var(--primary-color);
+}
+
+.toolbar .tool-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.color-picker-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.color-picker-group:hover {
+  border-color: var(--primary-color);
+}
+
+.color-picker-label {
+  padding: 8px;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.color-picker-group .tool-color-input {
+  width: 45px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.color-picker-group .tool-color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker-group .tool-color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 0;
+}
+
+.color-picker-group .tool-color-input::-moz-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker-group .tool-color-input::-moz-color-swatch {
+  border: none;
+  border-radius: 0;
+}
+
+.word-counter {
+  font-size: 0.9rem;
+  margin: auto;
+  color: var(--text-color);
+  background: var(--bg-light);
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  min-width: 100px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .editor-container {
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px var(--shadow-medium);
+  }
+
+  .toolbar {
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .toolbar .tool-button {
+    padding: 7px 10px;
+    font-size: 0.95rem;
+    min-width: 38px;
+  }
+
+  .toolbar .tool-select {
+    min-width: 100px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
+  }
+
+  .color-picker-group .tool-color-input {
+    width: 40px;
+    height: 36px;
+  }
+
+  .color-picker-label {
+    padding: 7px;
+    font-size: 0.85rem;
+  }
+
+  .divider {
+    height: 28px;
+    margin: 0 6px;
+  }
+
+  .word-counter {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+    min-width: 90px;
+  }
+
+  .editor {
+    min-height: 350px;
+    padding: 18px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .editor-container {
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-light);
+  }
+
+  .toolbar {
+    padding: 8px 10px;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .toolbar .tool-button {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    min-width: 35px;
+  }
+
+  .toolbar .tool-select {
+    min-width: 90px;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .color-picker-group .tool-color-input {
+    width: 35px;
+    height: 34px;
+  }
+
+  .color-picker-label {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .divider {
+    height: 25px;
+    margin: 0 5px;
+  }
+
+  .word-counter {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+    min-width: 80px;
+    order: 100;
+    margin-top: 5px;
+  }
+
+  .editor {
+    min-height: 300px;
+    padding: 15px;
+    font-size: 14px;
+  }
+}

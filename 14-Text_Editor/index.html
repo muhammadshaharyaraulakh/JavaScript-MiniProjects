@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Editor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="editor-container">
+    <div class="toolbar">
+      <button id="Bold" class="tool-button"><i class="fas fa-bold"></i></button>
+      <button id="Italic" class="tool-button"><i class="fas fa-italic"></i></button>
+      <button id="Underline" class="tool-button"><i class="fas fa-underline"></i></button>
+      <button id="Highlight" class="tool-button"><i class="fas fa-highlighter"></i></button>
+      <button id="Eraser" class="tool-button"><i class="fas fa-eraser"></i></button>
+      <span class="divider"></span>
+
+      <button id="AlignLeft" class="tool-button"><i class="fas fa-align-left"></i></button>
+      <button id="AlignCenter" class="tool-button"><i class="fas fa-align-center"></i></button>
+      <button id="AlignRight" class="tool-button"><i class="fas fa-align-right"></i></button>
+      <span class="divider"></span>
+
+      <select id="FontFamily" class="tool-select">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Garamond">Garamond</option>
+      </select>
+
+      <select id="FontSize" class="tool-select">
+        <option value="12px">12</option>
+        <option value="14px">14</option>
+        <option value="16px" selected>16</option>
+        <option value="18px">18</option>
+        <option value="24px">24</option>
+        <option value="32px">32</option>
+        <option value="48px">48</option>
+      </select>
+
+      <span class="divider"></span>
+
+      <div class="color-picker-group">
+        <label for="TextColor" class="color-picker-label" title="Text Color"><i class="fas fa-font"></i></label>
+        <input type="color" id="TextColor" class="tool-color-input" value="#000000" />
+      </div>
+      <div class="color-picker-group">
+        <label for="BgColor" class="color-picker-label" title="Highlight Color"><i class="fas fa-fill-drip"></i></label>
+        <input type="color" id="BgColor" class="tool-color-input" value="#FFFF00" />
+      </div>
+
+      <span class="divider"></span>
+
+      <div id="WordCount" class="word-counter">Words: 0</div>
+    </div>
+
+    <div id="Editor" class="editor" contenteditable="true" spellcheck="true" placeholder="Start typing here..."></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
