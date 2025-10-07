@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Aesthetic QR Code Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="card">
+
+
+        <!-- Input -->
+        <div class="input-box">
+            <input id="qr-input" type="text" placeholder="Enter text or URL">
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button id="generate-btn" class="btn generate">Generate QR</button>
+            <a id="download-link" class="btn download" download="">Download</a>
+        </div>
+
+        <!-- QR Preview -->
+        <div class="preview">
+            <img id="qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=Hello%20World!"
+                alt="QR Preview">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
