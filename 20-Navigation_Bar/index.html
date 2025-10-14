@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <h2><a href="#">Logo</a></h2>
+            </div>
+            <div class="nav-links">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="action-buttons">
+                <button class="btn secondary">Login</button>
+                <button class="btn">Signup</button>
+            </div>
+            <div class="menu-toggle">
+                <button id="open-nav">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+    </div>
+
+    <!-- Off-Canvas Menu -->
+    <div class="offcanvas-overlay" id="offcanvas-overlay"></div>
+    <div class="offcanvas-menu" id="offcanvas-menu">
+        <div class="close-btn-wrapper">
+            <button class="close-btn" id="close-nav">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="offcanvas-nav-list">
+            <li class="nav-item"><a href="#" class="nav-link offcanvas-link">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link offcanvas-link">Products</a></li>
+            <li class="nav-item"><a href="#" class="nav-link offcanvas-link">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link offcanvas-link">Contact</a></li>
+        </ul>
+        <div class="offcanvas-buttons">
+            <button class="btn secondary offcanvas-link">Login</button>
+            <button class="btn offcanvas-link">Signup</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
