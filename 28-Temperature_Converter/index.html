@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="buttons">
+      <button class="active btn" data-tab="celsius">Celsius</button>
+      <button class="btn" data-tab="kelvin">Kelvin</button>
+      <button class="btn"  data-tab="fahrenheit">Fahrenheit</button>
+    </div>
+
+    <div class="content">
+      <div class="tab active" id="celsius">
+        <div class="input-box">
+          <input type="number" placeholder="Enter Kelvin">
+          <button class="calc-btn" >Calculate</button>
+
+
+        </div>
+        <div class="input-box">
+          <input type="number" placeholder="Enter Fahrenheit">
+          <button class="calc-btn">Calculate</button>
+
+        </div>
+      </div>
+      <div class="tab" id="kelvin">
+        <div class="input-box">
+          <input type="number" placeholder="Enter Celsius">
+          <button class="calc-btn">Calculate</button>
+          
+        </div>
+        <div class="input-box">
+          <input type="number" placeholder="Enter Fahrenheit">
+          <button class="calc-btn">Calculate</button>
+          
+        </div>
+      </div>
+      <div class="tab" id="fahrenheit">
+        <div class="input-box">
+          <input type="number" placeholder="Enter Celsius">
+          <button class="calc-btn">Calculate</button>
+
+        </div>
+        <div class="input-box">
+          <input type="number" placeholder="Enter Kelvin">
+          <button class="calc-btn">Calculate</button>
+
+        </div>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>
