@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Weight Converter</h1>
+        <div class="converter-box">
+            <div class="input-group">
+                <label for="inputValue">Enter Weight:</label>
+                <input type="number" id="inputValue" placeholder="e.g. 100">
+                
+                <select id="inputUnit">
+                    <option value="kg">(kg)</option>
+                    <option value="pounds">Pounds</option>
+                    <option value="grams">Grams</option>
+                    <option value="ounces">Ounce</option>
+                </select>
+            </div>
+            <button id="calculate-btn">
+                    Calculate
+                </button>
+            <div class="output-group">
+                <label>Converted Weight:</label>
+                <div class="results">
+                    <p>Pounds(lb): <span id="poundsOutput">0</span></p>
+                    <p>Kilograms(kg): <span id="kgOutput">0</span></p>
+                    <p>Grams(g): <span id="gramsOutput">0</span></p>
+                    <p>Ounces(oz): <span id="ouncesOutput">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script> 
+</body>
+</html>
