@@ -1,0 +1,97 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fd, #e9ecff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 2rem;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #2c2c54;
+}
+
+.form-control {
+    border-radius: 50px;
+    padding: 12px;
+    border: 1.5px solid #ddd;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2);
+}
+
+.btn-calc {
+    background: linear-gradient(135deg, #6c63ff, #4a47d6);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    padding: 12px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 14px rgba(108, 99, 255, 0.3);
+    border: none;
+}
+
+.btn-calc:hover,
+.btn-calc:active {
+    background: linear-gradient(135deg, #4a47d6, #3733c9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(108, 99, 255, 0.4);
+    color: white;
+}
+
+.result-box {
+    background: #f4f4ff;
+    padding: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    text-align: left;
+    display: none;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.form-label {
+    font-weight: 600;
+    color: #444;
+}

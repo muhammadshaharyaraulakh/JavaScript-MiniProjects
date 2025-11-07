@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="card text-center">
+    <h2 class="mb-3">Tip Calculator</h2>
+    <p class="text-muted small mb-4">Easily calculate your tip & total bill</p>
+
+    <form>
+      <div class="mb-3">
+        <label for="billAmount" class="form-label">Bill Amount ($)</label>
+        <input type="number" id="billAmount" class="form-control" placeholder="Enter bill amount">
+      </div>
+      <div class="mb-3">
+        <label for="tipPercent" class="form-label">Tip Percentage (%)</label>
+        <input type="number" id="tipPercent" class="form-control" placeholder="e.g. 10, 15, 20">
+      </div>
+      <div class="mb-3">
+        <label for="peopleCount" class="form-label">Number of People</label>
+        <input type="number" id="peopleCount" class="form-control" placeholder="Split between how many?">
+      </div>
+      <button type="button" class="btn btn-calc w-100">Calculate</button>
+    </form>
+
+    <div class="result-box mt-3" id="result">
+      <p>Tip: <strong>$0.00</strong></p>
+      <p>Total Bill: <strong>$0.00</strong></p>
+      <p>Per Person: <strong>$0.00</strong></p>
+    </div>
+  </div>
+   <script src="main.js"></script>
+</body>
+</html>
