@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.carousel-controls {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.carousel-controls button {
+  background: orangered;
+  border: none;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+}
+.carousel-controls button:hover,
+.carousel-controls button:active,
+.carousel-controls button:focus {
+  background: #cc3700;
+  outline: none;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.carousel-inner-custom {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item-custom {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carousel-card {
+  background: #fff;
+  border: 2px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.carousel-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.carousel-card p {
+  font-size: 14px;
+  color: #555;
+  flex-grow: 1;
+}
+
+.carousel-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.add-to-cart-btn {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #cc3700;
+}
+
+
+@media (min-width: 576px) {
+  .carousel-item-custom {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .carousel-item-custom {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
+@media (min-width: 1200px) {
+  .carousel-item-custom {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.carousel-dots {
+  text-align: center;
+  margin-top: 30px;
+}
+.carousel-dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: orangered;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.4;
+}
+.carousel-dots .dot.active {
+  opacity: 1;
+}
