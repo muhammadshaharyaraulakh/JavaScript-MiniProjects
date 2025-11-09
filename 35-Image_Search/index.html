@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">ImageSearch</a>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Search</a>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Discover Amazing Images</h1>
+            <p>Search for high-quality photos and illustrations.</p>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for anything...">
+                <button id="searchButton">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="results-grid" id="imageResults">
+            <!-- Image results will be injected here by JavaScript -->
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
