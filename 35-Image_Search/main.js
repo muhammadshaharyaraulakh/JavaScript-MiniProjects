@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     async function searchImages(query) {
-        imageResults.innerHTML = "<p>Loading...</p>";
+        imageResults.innerHTML = "<p>Loading</p>";
         try {
             const response = await fetch(`https://api.openverse.org/v1/images?q=${encodeURIComponent(query)}`);
             const data = await response.json();
