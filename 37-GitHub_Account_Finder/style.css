@@ -1,0 +1,176 @@
+:root {
+    --bg-color: #f8fafc;
+    /* Soft off-white/gray */
+    --text-main: #1e293b;
+    /* Dark slate for readability */
+    --accent: #6366f1;
+    /* Indigo for buttons/links */
+    --accent-hover: #4f46e5;
+    --card-bg: #ffffff;
+    --input-bg: #f1f5f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+
+/* --- Improved Search Bar --- */
+.search-box {
+    display: flex;
+    background: var(--card-bg);
+    padding: 6px;
+    border-radius: 50px;
+    /* Pill shape */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 16px;
+    outline: none;
+    color: var(--text-main);
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+/* --- Elevated Profile Card --- */
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin: 10px 0 5px 0;
+    font-size: 1.5rem;
+}
+
+p {
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Adjustments (320px) --- */
+@media (max-width: 320px) {
+    .search-box {
+        border-radius: 12px;
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+
+    input {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 8px;
+        border: 1px solid #e2e8f0;
+    }
+
+    button {
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .card {
+        padding: 25px 15px;
+    }
+}
