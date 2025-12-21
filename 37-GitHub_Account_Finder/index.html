@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Insight</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+    --bg-color: #f8fafc;        /* Soft off-white/gray */
+    --text-main: #1e293b;       /* Dark slate for readability */
+    --accent: #6366f1;          /* Indigo for buttons/links */
+    --accent-hover: #4f46e5;
+    --card-bg: #ffffff;
+    --input-bg: #f1f5f9;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+
+/* --- Improved Search Bar --- */
+.search-box {
+    display: flex;
+    background: var(--card-bg);
+    padding: 6px;
+    border-radius: 50px; /* Pill shape */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    font-size: 16px;
+    outline: none;
+    color: var(--text-main);
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+/* --- Elevated Profile Card --- */
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 { margin: 10px 0 5px 0; font-size: 1.5rem; }
+
+p {
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Responsive Adjustments (320px) --- */
+@media (max-width: 320px) {
+    .search-box {
+        border-radius: 12px;
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+    input {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 8px;
+        border: 1px solid #e2e8f0;
+    }
+    button {
+        border-radius: 12px;
+        width: 100%;
+    }
+    .card { padding: 25px 15px; }
+}
+    </style>
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="username" placeholder="Enter username of github" autocomplete="off">
+            <button id="action">Search</button>
+        </div>
+
+        <div id="profile-card" class="card hidden">
+            </div>
+    </div>
+    <script>
+            const search=document.getElementById('action');
+            search.addEventListener('click',()=>{
+                fetchProfile();
+            })
+        async function fetchProfile() {
+
+    const username = document.getElementById('username').value;
+    const card = document.getElementById('profile-card');
+
+    if (!username) return;
+
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        const data = await response.json();
+
+        if (data.message === "Not Found") {
+            alert("User not found!");
+            return;
+        }
+
+        card.innerHTML = `
+            <img src="${data.avatar_url}" class="profile-pic" alt="Avatar">
+            <h2>${data.name || data.login}</h2>
+            <p>${data.bio || 'No bio available'}</p>
+            <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                <span><strong>${data.followers}</strong> Followers</span>
+                <span><strong>${data.public_repos}</strong> Repositories</span>
+            </div>
+            <a href="${data.html_url}" target="_blank" style="display: inline-block; margin-top: 20px; color: #38bdf8; text-decoration: none;">View Profile</a>
+        `;
+
+        // Trigger animation
+        card.classList.remove('show');
+        setTimeout(() => card.classList.add('show'), 100);
+        
+        // Subtle color shift based on the profile
+        document.querySelector('.background-glow').style.background = 
+            `radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%)`;
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+    </script>
+</body>
+</html>
