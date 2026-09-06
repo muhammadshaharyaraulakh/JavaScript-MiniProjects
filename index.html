@@ -1,148 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JavaScript Mini Projects</title>
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    line-height: 1.5;
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-body::-webkit-scrollbar {
-    display: none;
-}
-h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px solid #000000;
-    letter-spacing: -1px;
-}
-.project-list {
-    list-style: none;
-}
-.project-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e0e0e0;
-    transition: padding-left 0.3s ease;
-    cursor: pointer;
-}
-.project-item:hover {
-    padding-left: 10px;
-    border-bottom: 1px solid #000000;
-}
-.project-info {
-    flex: 1;
-    padding-right: 20px;
-}
-.project-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-.project-category {
-    font-size: 0.75rem;
-    color: #666666;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.live-demo-btn {
-    display: inline-block;
-    padding: 10px 24px;
-    background-color: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 2px solid #000000;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-.live-demo-btn:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-@media (max-width: 600px) {
-    .project-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Mini Projects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.5;
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #000000;
+            letter-spacing: -1px;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: padding-left 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-item:hover {
+            padding-left: 10px;
+            border-bottom: 1px solid #000000;
+        }
+
+        .project-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .live-demo-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 2px solid #000000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .live-demo-btn:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        @media (max-width: 600px) {
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>JavaScript Projects</h1>
+    <h1>JavaScript Projects</h1>
 
-<ul class="project-list" id="project-list"></ul>
+    <ul class="project-list" id="project-list"></ul>
 
-<script>
-const projects = [
-    { id: '1-Random_Bg_Color', title: 'Random Bg Color', category: 'Utilities' },
-    { id: '2-Character_Limit_Counter_trcaker', title: 'Character Limit Counter', category: 'Tools' },
-    { id: '3-Digital_Clock', title: 'Digital Clock', category: 'UI Components' },
-    { id: '4-Number_Counter', title: 'Number Counter', category: 'UI Components' },
-    { id: '5-Show_Hide_Password', title: 'Show/Hide Password', category: 'UI Components' },
-    { id: '6-Random_Colors_rgbCode', title: 'Random Colors RGB Code', category: 'Utilities' },
-    { id: '7-Age_Calculator', title: 'Age Calculator', category: 'Tools' },
-    { id: '8-AnimatedSearchBar', title: 'Animated Search Bar', category: 'UI Components' },
-    { id: '9-Pakistan_Rupee_Counter', title: 'Pakistan Rupee Counter', category: 'Tools' },
-    { id: '10-Poll_System', title: 'Poll System', category: 'UI Components' },
-    { id: '11-Weather_Search', title: 'Weather Search', category: 'APIs' },
-    { id: '12-DragnDrop', title: 'Drag n Drop', category: 'UI Components' },
-    { id: '13-Theme_Switcher', title: 'Theme Switcher', category: 'Utilities' },
-    { id: '14-Text_Editor', title: 'Text Editor', category: 'Tools' },
-    { id: '15-BMI_Calculator', title: 'BMI Calculator', category: 'Tools' },
-    { id: '16-Dictionary', title: 'Dictionary App', category: 'APIs' },
-    { id: '17-Text_To_QR-Code', title: 'QR Code Generator', category: 'Tools' },
-    { id: '18-Random_Fact', title: 'Random Fact Generator', category: 'APIs' },
-    { id: '19-Number_Counting_Animation', title: 'Number Counting Animation', category: 'UI Components' },
-    { id: '20-Navigation_Bar', title: 'Navigation Bar', category: 'UI Components' },
-    { id: '21-Frequently_Asked_Questions', title: 'Frequently Asked Questions', category: 'UI Components' },
-    { id: '22-Stop_Watch', title: 'Stop Watch', category: 'Tools' },
-    { id: '23-Number_Guess_Game', title: 'Number Guess Game', category: 'Games' },
-    { id: '24-Number_Guess', title: 'Number Guess', category: 'Games' },
-    { id: '25-Plaindrom_Checker', title: 'Palindrome Checker', category: 'Tools' },
-    { id: '26-Quiz', title: 'Quiz', category: 'Games' },
-    { id: '27-Password_Generator', title: 'Password Generator', category: 'Tools' },
-    { id: '28-Temperature_Converter', title: 'Temperature Converter', category: 'Tools' },
-    { id: '29-Form_Validation', title: 'Form Validation', category: 'Forms' },
-    { id: '30-Color_Platter', title: 'Color Platter', category: 'Utilities' },
-    { id: '31-Todo_App', title: 'Todo App', category: 'Tools' },
-    { id: '32-Weight_Unit_Converter', title: 'Weight Unit Converter', category: 'Tools' },
-    { id: '33-Tip_Calculator', title: 'Tip Calculator', category: 'Tools' },
-    { id: '34-Slider', title: 'Slider', category: 'UI Components' },
-    { id: '35-Image_Search', title: 'Image Search', category: 'APIs' },
-    { id: '36-Crypto_Price_Tracker', title: 'Crypto Price Tracker', category: 'APIs' },
-    { id: '37-GitHub_Account_Finder', title: 'GitHub Account Finder', category: 'APIs' },
-    { id: '38-AsideBar', title: 'Aside Bar', category: 'UI Components' }
-];
+    <script>
+        const projects = [
+            { id: '1-Random_Bg_Color', title: 'Random Bg Color', category: 'Utilities' },
+            { id: '2-Character_Limit_Counter_trcaker', title: 'Character Limit Counter', category: 'Tools' },
+            { id: '3-Digital_Clock', title: 'Digital Clock', category: 'UI Components' },
+            { id: '4-Number_Counter', title: 'Number Counter', category: 'UI Components' },
+            { id: '5-Show_Hide_Password', title: 'Show/Hide Password', category: 'UI Components' },
+            { id: '6-Random_Colors_rgbCode', title: 'Random Colors RGB Code', category: 'Utilities' },
+            { id: '7-Age_Calculator', title: 'Age Calculator', category: 'Tools' },
+            { id: '8-AnimatedSearchBar', title: 'Animated Search Bar', category: 'UI Components' },
+            { id: '9-Pakistan_Rupee_Counter', title: 'Pakistan Rupee Counter', category: 'Tools' },
+            { id: '10-Poll_System', title: 'Poll System', category: 'UI Components' },
+            { id: '11-Weather_Search', title: 'Weather Search', category: 'APIs' },
+            { id: '12-DragnDrop', title: 'Drag n Drop', category: 'UI Components' },
+            { id: '13-Theme_Switcher', title: 'Theme Switcher', category: 'Utilities' },
+            { id: '14-Text_Editor', title: 'Text Editor', category: 'Tools' },
+            { id: '15-BMI_Calculator', title: 'BMI Calculator', category: 'Tools' },
+            { id: '16-Dictionary', title: 'Dictionary App', category: 'APIs' },
+            { id: '17-Text_To_QR-Code', title: 'QR Code Generator', category: 'Tools' },
+            { id: '18-Random_Fact', title: 'Random Fact Generator', category: 'APIs' },
+            { id: '19-Number_Counting_Animation', title: 'Number Counting Animation', category: 'UI Components' },
+            { id: '20-Navigation_Bar', title: 'Navigation Bar', category: 'UI Components' },
+            { id: '21-Frequently_Asked_Questions', title: 'Frequently Asked Questions', category: 'UI Components' },
+            { id: '22-Stop_Watch', title: 'Stop Watch', category: 'Tools' },
+            { id: '23-Number_Guess_Game', title: 'Number Guess Game', category: 'Games' },
+            { id: '25-Plaindrom_Checker', title: 'Palindrome Checker', category: 'Tools' },
+            { id: '26-Quiz', title: 'Quiz', category: 'Games' },
+            { id: '27-Password_Generator', title: 'Password Generator', category: 'Tools' },
+            { id: '28-Temperature_Converter', title: 'Temperature Converter', category: 'Tools' },
+            { id: '29-Form_Validation', title: 'Form Validation', category: 'Forms' },
+            { id: '30-Color_Platter', title: 'Color Platter', category: 'Utilities' },
+            { id: '31-Todo_App', title: 'Todo App', category: 'Tools' },
+            { id: '32-Weight_Unit_Converter', title: 'Weight Unit Converter', category: 'Tools' },
+            { id: '33-Tip_Calculator', title: 'Tip Calculator', category: 'Tools' },
+            { id: '34-Slider', title: 'Slider', category: 'UI Components' },
+            { id: '35-Image_Search', title: 'Image Search', category: 'APIs' },
+            { id: '36-Crypto_Price_Tracker', title: 'Crypto Price Tracker', category: 'APIs' },
+            { id: '37-GitHub_Account_Finder', title: 'GitHub Account Finder', category: 'APIs' },
+            { id: '38-AsideBar', title: 'Aside Bar', category: 'UI Components' }
+        ];
 
-const list = document.getElementById('project-list');
+        const list = document.getElementById('project-list');
 
-list.innerHTML = projects.map(p => `
+        list.innerHTML = projects.map(p => `
     <li class="project-item">
         <div class="project-info">
             <div class="project-title">${p.title}</div>
@@ -151,7 +165,8 @@ list.innerHTML = projects.map(p => `
         <a href="./${p.id}/" class="live-demo-btn">Live Demo</a>
     </li>
 `).join('');
-</script>
+    </script>
 
 </body>
+
 </html>

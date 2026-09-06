@@ -40,7 +40,7 @@ h2 {
 
 .form-control {
     border-radius: 50px;
-    padding: 12px;
+    padding: 12px 20px;
     border: 1.5px solid #ddd;
     transition: all 0.3s;
 }
@@ -56,10 +56,11 @@ h2 {
     font-weight: 600;
     transition: all 0.3s ease;
     border-radius: 50px;
-    padding: 12px;
+    padding: 14px;
     letter-spacing: 0.5px;
     box-shadow: 0 6px 14px rgba(108, 99, 255, 0.3);
     border: none;
+    font-size: 1rem;
 }
 
 .btn-calc:hover,
@@ -72,13 +73,36 @@ h2 {
 
 .result-box {
     background: #f4f4ff;
-    padding: 1.2rem;
-    font-weight: 600;
+    padding: 1.2rem 1.4rem;
+    font-weight: 500;
     margin-top: 1.5rem;
     text-align: left;
     display: none;
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+    border: 1px solid #e2e4f7;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.03);
     animation: fadeIn 0.5s ease;
+}
+
+.result-box p {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4b4b72;
+    font-size: 0.95rem;
+}
+
+.result-box p:last-child {
+    margin-bottom: 0;
+    padding-top: 8px;
+    border-top: 1px dashed #d5d7f5;
+    font-size: 1.05rem;
+}
+
+.result-box p strong {
+    color: #2c2c54;
+    font-weight: 700;
 }
 
 @keyframes fadeIn {
@@ -94,4 +118,9 @@ h2 {
 .form-label {
     font-weight: 600;
     color: #444;
+    display: block;
+    text-align: left;
+    margin-left: 12px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
 }
